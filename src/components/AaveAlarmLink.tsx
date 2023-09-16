@@ -72,22 +72,36 @@ export default function AaveAlarmLink() {
   };
 
   return (
-    <Tooltip
-      arrow
-      placement="top"
-      PopperComponent={PopperComponent}
-      title={
-        <Stack sx={{ py: 4, px: 6 }} spacing={1}>
-          <Typography variant="tooltip" color="text.secondary" fontWeight={500}>
-            <Trans>Setup notifications about your Health Factor using the Aave Alarm app.</Trans>
-          </Typography>
-          <Typography variant="tooltip" color="text.secondary" fontWeight={500}>
-            <Trans>This app was developed thanks to a grant from Aave Grants DAO</Trans>
-          </Typography>
-        </Stack>
-      }
-    >
-      <>
+    <>
+      <Tooltip
+        arrow
+        placement="top"
+        PopperComponent={PopperComponent}
+        title={
+          <Stack sx={{ py: 4, px: 6 }} spacing={1}>
+            <Typography variant="tooltip" color="text.secondary" fontWeight={500}>
+              <Trans>Setup notifications about your Health Factor using the Aave Alarm app.</Trans>
+            </Typography>
+            <Typography variant="tooltip" color="text.secondary" fontWeight={500}>
+              <Trans>
+                This integration was
+                <Link
+                  mx={1}
+                  variant="tooltip"
+                  color="text.secondary"
+                  fontWeight={500}
+                  target="_blank"
+                  rel="noopener"
+                  href="" // TODO: add link to the proposal
+                >
+                  proposed and approved
+                </Link>
+                by the community.
+              </Trans>
+            </Typography>
+          </Stack>
+        }
+      >
         <Button
           variant="surface"
           size="small"
@@ -112,26 +126,26 @@ export default function AaveAlarmLink() {
           </SvgIcon>
           <Trans>Notify</Trans>
         </Button>
-        <Menu
-          id="aave-alarm-menu"
-          anchorEl={anchorEl}
-          open={open}
-          onClose={handleClose}
-          MenuListProps={{
-            'aria-labelledby': 'lock-button',
-            role: 'listbox',
-          }}
-        >
-          <MenuList disablePadding sx={{ '.MuiMenuItem-root.Mui-disabled': { opacity: 1 } }}>
-            {Apps &&
-              Object.keys(Apps).map((key) => (
-                <MenuItem key={key} onClick={() => handleMenuItemClick(key as keyof Apps)}>
-                  {key}
-                </MenuItem>
-              ))}
-          </MenuList>
-        </Menu>
-      </>
-    </Tooltip>
+      </Tooltip>
+      <Menu
+        id="aave-alarm-menu"
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+        MenuListProps={{
+          'aria-labelledby': 'lock-button',
+          role: 'listbox',
+        }}
+      >
+        <MenuList disablePadding sx={{ '.MuiMenuItem-root.Mui-disabled': { opacity: 1 } }}>
+          {Apps &&
+            Object.keys(Apps).map((key) => (
+              <MenuItem key={key} onClick={() => handleMenuItemClick(key as keyof Apps)}>
+                {key}
+              </MenuItem>
+            ))}
+        </MenuList>
+      </Menu>
+    </>
   );
 }
