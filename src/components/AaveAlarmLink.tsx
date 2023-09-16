@@ -62,11 +62,6 @@ export default function AaveAlarmLink() {
     Android: 'https://play.google.com/store/apps/details?id=com.aavealarm&pcampaignid=web_share',
   };
 
-  const handleMenuItemClick = (key: keyof Apps) => {
-    setAnchorEl(null);
-    window.open(Apps[key], '_blank');
-  };
-
   const handleClose = () => {
     setAnchorEl(null);
   };
@@ -140,9 +135,15 @@ export default function AaveAlarmLink() {
         <MenuList disablePadding sx={{ '.MuiMenuItem-root.Mui-disabled': { opacity: 1 } }}>
           {Apps &&
             Object.keys(Apps).map((key) => (
-              <MenuItem key={key} onClick={() => handleMenuItemClick(key as keyof Apps)}>
-                {key}
-              </MenuItem>
+              <Link
+                href={Apps[key as keyof Apps]}
+                sx={{ textDecoration: 'none' }}
+                target="_blank"
+                rel="noopener"
+                key={key}
+              >
+                <MenuItem>{key}</MenuItem>
+              </Link>
             ))}
         </MenuList>
       </Menu>
