@@ -199,15 +199,7 @@ export const DashboardTopPanel = () => {
                   />
                 )
               }
-              AaveAlarmIntegrationComponent={
-                currentMarketData.halIntegration && (
-                  <AaveAlarmLink
-                    healthFactor={user?.healthFactor || '-1'}
-                    marketName={currentMarketData.halIntegration.marketName}
-                    integrationURL={currentMarketData.halIntegration.URL}
-                  />
-                )
-              }
+              AaveAlarmIntegrationComponent={<AaveAlarmLink />}
             />
           </TopInfoPanelItem>
         )}
