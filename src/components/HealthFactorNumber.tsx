@@ -10,12 +10,14 @@ interface HealthFactorNumberProps extends TypographyProps {
   value: string;
   onInfoClick?: () => void;
   HALIntegrationComponent?: React.ReactNode;
+  AaveAlarmIntegrationComponent?: React.ReactNode;
 }
 
 export const HealthFactorNumber = ({
   value,
   onInfoClick,
   HALIntegrationComponent,
+  AaveAlarmIntegrationComponent,
   ...rest
 }: HealthFactorNumberProps) => {
   const { palette } = useTheme();
@@ -67,6 +69,11 @@ export const HealthFactorNumber = ({
       {HALIntegrationComponent && (
         <Box ml={{ xs: 0, xsm: 2 }} mt={{ xs: 1, xsm: 0 }}>
           {HALIntegrationComponent}
+        </Box>
+      )}
+      {AaveAlarmIntegrationComponent && (
+        <Box ml={{ xs: 0, xsm: 2 }} mt={{ xs: 1, xsm: 0 }}>
+          {AaveAlarmIntegrationComponent}
         </Box>
       )}
     </Box>

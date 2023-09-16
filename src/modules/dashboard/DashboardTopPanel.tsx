@@ -16,6 +16,7 @@ import { useRootStore } from 'src/store/root';
 import { selectIsMigrationAvailable } from 'src/store/v3MigrationSelectors';
 import { DASHBOARD, GENERAL } from 'src/utils/mixPanelEvents';
 
+import AaveAlarmLink from '../../components/AaveAlarmLink';
 import HALLink from '../../components/HALLink';
 import { HealthFactorNumber } from '../../components/HealthFactorNumber';
 import { FormattedNumber } from '../../components/primitives/FormattedNumber';
@@ -192,6 +193,15 @@ export const DashboardTopPanel = () => {
               HALIntegrationComponent={
                 currentMarketData.halIntegration && (
                   <HALLink
+                    healthFactor={user?.healthFactor || '-1'}
+                    marketName={currentMarketData.halIntegration.marketName}
+                    integrationURL={currentMarketData.halIntegration.URL}
+                  />
+                )
+              }
+              AaveAlarmIntegrationComponent={
+                currentMarketData.halIntegration && (
+                  <AaveAlarmLink
                     healthFactor={user?.healthFactor || '-1'}
                     marketName={currentMarketData.halIntegration.marketName}
                     integrationURL={currentMarketData.halIntegration.URL}

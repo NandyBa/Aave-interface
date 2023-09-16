@@ -1580,6 +1580,7 @@ msgstr "Nothing staked"
 msgid "Nothing supplied yet"
 msgstr "Nothing supplied yet"
 
+#: src/components/AaveAlarmLink.tsx
 #: src/components/HALLink.tsx
 msgid "Notify"
 msgstr "Notify"
@@ -1980,6 +1981,10 @@ msgstr "Send feedback"
 #: src/modules/governance/DelegatedInfoPanel.tsx
 msgid "Set up delegation"
 msgstr "Set up delegation"
+
+#: src/components/AaveAlarmLink.tsx
+msgid "Setup notifications about your Health Factor using the Aave Alarm app."
+msgstr "Setup notifications about your Health Factor using the Aave Alarm app."
 
 #: src/components/HALLink.tsx
 msgid "Setup notifications about your Health Factor using the Hal app."
@@ -2416,6 +2421,10 @@ msgstr "This action will reduce your health factor. Please be mindful of the inc
 #: src/components/AddressBlockedModal.tsx
 msgid "This address is blocked on app.aave.com because it is associated with one or more"
 msgstr "This address is blocked on app.aave.com because it is associated with one or more"
+
+#: src/components/AaveAlarmLink.tsx
+msgid "This app was developed thanks to a grant from Aave Grants DAO"
+msgstr "This app was developed thanks to a grant from Aave Grants DAO"
 
 #: src/components/caps/CapsTooltip.tsx
 msgid "This asset has almost reached its borrow cap. There is only {messageValue} available to be borrowed from this market."
